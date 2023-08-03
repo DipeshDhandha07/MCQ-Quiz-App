@@ -17,7 +17,7 @@ pip install django
 ```
 <br>
 3. Create virtual environment
-
+<br>
 Windows
 ```html
 py -m venv env 
@@ -29,6 +29,7 @@ python -m venv env
 <br>
 4. Copy MCQ-Quiz-APP folder and paste to env folder
 <br>
+
 5. Run
 
 ```html
@@ -50,5 +51,7 @@ py manage.py migrate
 ```html
 py manage.py runserver
 ```
-4. Open in broswer<br>
+<br>
+
+6. Open in broswer<br>
 http://localhost:8000/ 
