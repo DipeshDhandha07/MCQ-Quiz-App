@@ -8,12 +8,12 @@ Using Django framework where teacher can create quiz and student can give any qu
 ```html
 https://github.com/DipeshDhandha07/Onlinequizapp.git
 ```
-2. Install django
+2. Installation
 
 ```html
 pip install django
 ```
-3. run
+3. Run
 ```html
 py manage.py makemigrations
 ```
@@ -25,5 +25,5 @@ py manage.py migrate
 ```html
 py manage.py runserver
 ```
-4. Open in broswer
+4. Open in broswer<br>
 http://localhost:8000/ 
