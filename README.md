@@ -1,14 +1,14 @@
 # Onlinequizapp
 Using Django framework where teacher can create quiz and student can give any quiz exam created by teacher which includes login and register page as well 
 
-
 ##Installation
+
 1. Clone this repository
 
 ```html
 https://github.com/DipeshDhandha07/Onlinequizapp.git
 ```
-2. Installation
+2. Django installation
 
 ```html
 pip install django
