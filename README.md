@@ -8,7 +8,7 @@ Created using Django framework where teacher can create quiz and student can giv
 ### Python
 
 https://www.python.org/downloads/
-<br>
+
 
 # Installation
 
