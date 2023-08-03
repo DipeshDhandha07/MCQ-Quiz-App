@@ -16,8 +16,10 @@ https://github.com/DipeshDhandha07/MCQ-Quiz-App.git
 pip install django
 ```
 <br>
+
 3. Create virtual environment
 <br>
+
 Windows
 ```html
 py -m venv env 
