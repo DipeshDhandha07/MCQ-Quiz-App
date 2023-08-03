@@ -1,0 +1,16 @@
+{% extends "mcq1/layout.html" %}
+{% block title %}Home{% endblock %}
+{% block content %}
+<h2>Online Quiz app:</h2>
+<div id="quiz_list">
+{% for quiz in quizzes %}
+<li><div class="container quiz_item">
+    <div class="quiz_name"><b>{{ quiz.quiz_name|title }}</b></div><br>
+    <strong>Topic:</strong>  {{ quiz.topic|title }}<br>
+    <strong>Created by:</strong>  <a href={% url 'profile' pk=quiz.author.user.pk %}>{{ quiz.author|title }}</a><br> 
+    <strong>Number of questions:</strong>  {{ quiz.no_ques }}<br>
+    <button type='button' class="quiz_btn"><a href={% url 'take_quiz' pk=quiz.pk %}>Take Quiz</a></button><br><br>
+</div></li>
+{% endfor %}
+</div>
+{% endblock %}

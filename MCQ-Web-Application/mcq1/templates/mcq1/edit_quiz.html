@@ -1,0 +1,29 @@
+{% extends "mcq1/layout.html" %}
+{% block title %}Edit Quiz{% endblock %}
+{% block content %}
+
+<div class='container'>
+    <br>
+    {% if usr.is_teacher == True %}
+    {% if quis.exists %}
+    <h2>You can edit:</h2>
+    <div id="quiz_list">
+    {% for quiz in quis %}
+    <div class='container quiz_item'>
+        <li><div class="quiz_name"><b>{{ quiz.quiz_name|title }}</b></div><br>
+        <strong>Topic:</strong>  {{ quiz.topic|title }}<br>
+        <strong>Number of questions:</strong>  {{ quiz.no_ques }}<br>
+        <button type='button' class="quiz_btn"><a href={% url 'edit_quiz_pk' pk=quiz.pk %}>Edit Quiz</a></button><br><br> </li>
+    </div>
+    {% endfor %}
+    </div>
+    {% else %}
+    <h2>You do not have any quizzes to edit</h2>
+    {% endif %}
+    
+    {% else %}
+    <h2>You are a student...focus on taking quizzes not editing them.</h2>
+    {% endif %} 
+    
+</div>
+{% endblock %}

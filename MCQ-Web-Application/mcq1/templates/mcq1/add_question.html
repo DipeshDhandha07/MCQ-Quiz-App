@@ -1,0 +1,40 @@
+{% extends 'mcq1/layout.html' %}
+{% block title %}Add question{% endblock %}
+{% block content %}
+<div class='jumbotron'>
+<strong><text1>{{ counter }} more to go...</text1></strong><br><br>
+<form action={% url 'add_question'%} method='POST'>
+    {% csrf_token %} 
+    <label for='question'>Question:</label>
+    <input type='text' name="question" placeholder="Enter Question"><br><br>
+
+    <label for='choice1'>Choice 1:</label>
+    <input type='text' name="choice1" placeholder="Enter Choice 1"><br><br>
+
+    <label for='choice2'>Choice 2:</label>
+    <input type='text' name="choice2" placeholder="Enter Choice 2"><br><br>
+
+    <label for='choice3'>Choice 1:</label>
+    <input type='text' name="choice3" placeholder="Enter Choice 3"><br><br>
+
+    <label for='choice4'>Choice 4:</label>
+    <input type='text' name="choice4" placeholder="Enter Choice 4"><br><br>
+
+    <label for='cor_choice'>Correct answer:</label>
+    <input type='text' name="cor_choice" placeholder="Enter correct answer"><br><br>
+
+    <label for='mrks_cor'>Marks for correct answer:</label>
+    <input type='number' name="mrks_cor"><br><br>
+
+    <label for='neg_mrks'>Negative Marks:</label>
+    <input type='number' name="neg_mrks"><br><br>
+
+    {% if counter > 1 %}
+    <button type='submit' name='next'>Next</button>
+    {% else %}
+    <button type='submit' name='finish'>Finish</button>
+    {% endif %}
+
+</form>
+</div>
+{% endblock %}

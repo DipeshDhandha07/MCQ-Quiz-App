@@ -1,0 +1,14 @@
+{% extends 'mcq1/layout.html' %}
+{% block title %}Join now{% endblock %}
+{% block content %}
+<div class='container1'>
+<strong><text1>Join Today!</text1></strong><br><br>
+    <form method='POST'>
+        {% csrf_token %}
+        {{ form1.as_p }}
+        {{ form2.as_p }}
+        {% csrf_token %} 
+        <button type='submit' name='register'>Submit</button>
+    </form>
+</div>
+{% endblock %}

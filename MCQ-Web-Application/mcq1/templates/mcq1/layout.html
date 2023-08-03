@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+    {% load static %}
+    <head>
+        <title>{% block title %}{% endblock %}</title>
+        <link rel="stylesheet" href="{% static "css/styles.css" %}">
+    </head>
+    <body>
+
+        <header>
+        <nav class="navbar">
+        <ul>
+            <li><a href='/'>Home</a></li>
+            <li><a href='/about/'>About</a></li>
+
+            {% if user.is_authenticated %}
+            <li><a href='/create_quiz/'>Create a quiz</a></li>
+            <li><a href='/edit_quiz/'>Edit a quiz</a></li>
+            {% endif %}
+
+            {% if user.is_authenticated %}
+            <li><a href={% url 'profile' pk=user.pk %}>{{ user.username|title }}</a></li>
+            {% else %}
+            <li><a href='/register/'>Register</a></li>
+            {% endif %}
+
+            <div class="righter">
+            {% if user.is_authenticated %}
+            <li><a href='/logout/'>Logout</a></li>
+            {% else %}
+            <li><a href='/login/'>Login</a></li>
+            {% endif %}
+            </div>
+        </ul>
+        </nav>
+        </header>
+        <div class="content">
+        {% block content %}
+        {% endblock %}
+        </div>
+    </body>
+</html>

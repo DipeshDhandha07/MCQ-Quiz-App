@@ -1,0 +1,56 @@
+{% extends 'mcq1/layout.html' %}
+{% block title %}Take Quiz{% endblock %}
+{% block content %}
+{% comment %} <h1>Create a Quiz....</h1> {% endcomment %}
+<div class='container2'>
+<form action={% url 'attempt_ques' pk=pk %} method='POST'>
+    {% csrf_token %} 
+    <br>
+
+    <div>Marks for correct answer: {{ ques.mrk_correct }}</div>
+    <div>Marks for incorrect answer: {{ ques.neg_mrk }}</div>
+    <div align="right " id="displaytimer"><b>Time: 0 seconds</b></div>
+
+    {% comment %} <h3>correct answer: {{ ques.cor_choice }}</h3> {% endcomment %}
+    <h3>Score till now: <text>{{ score }}<text></h3>
+    <label for='question'><h3>Question: {{ ques.question }}</h3></label>
+    {% comment %} <input type='text' name="question" placeholder="Enter Question"><br> {% endcomment %}
+    <input type="radio" id="choice1" name="marked" value='{{ ques.choice1 }}'>
+    <label for="choice1">{{ ques.choice1 }}</label><br><br>
+
+    <input type="radio" id="choice2" name="marked" value='{{ ques.choice2 }}'>
+    <label for="choice2">{{ ques.choice2 }}</label><br><br>
+
+    <input type="radio" id="choice3" name="marked" value='{{ ques.choice3 }}'>
+    <label for="choice3">{{ ques.choice3 }}</label><br><br>
+
+    <input type="radio" id="choice4" name="marked" value='{{ ques.choice4 }}'>
+    <label for="choice4">{{ ques.choice4 }}</label><br><br>
+
+    {{ counter }} questions done<br><br>
+
+    {% if flg == 1 %}
+    <button type='submit' name='next'>Next</button>
+    {% else %}
+    <button type='submit' name='finish'>Finish</button>
+    {% endif %}
+
+</form>
+{% block script %}
+                    <script>
+
+                        console.log('hello world')
+                        const timer=document.getElementById('displaytimer')
+                        console.log(timer.textContent)
+                        const inputtag = document.getElementById('timer')
+
+                        t=0
+                        setInterval(()=>{
+                            t+=1
+                            timer.innerHTML ="<b>Time: " +t+" seconds</b>"
+                            inputtag.value = t
+                        },1000)
+                    </script>
+                {% endblock script %}
+</div>
+{% endblock %}
