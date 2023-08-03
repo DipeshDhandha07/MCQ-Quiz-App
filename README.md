@@ -15,6 +15,20 @@ https://github.com/DipeshDhandha07/Onlinequizapp.git
 pip install django
 ```
 3. Run
+
+```html
+py -m venv env
+```
+
+copy MCQ-Quiz-APP and paste to env folder
+```html
+env\Scripts\activate.bat
+```
+
+```html
+cd MCQ-Quiz-App\MCQ-Web-Application
+```
+
 ```html
 py manage.py makemigrations
 ```
