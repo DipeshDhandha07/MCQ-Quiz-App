@@ -1,6 +1,6 @@
 # MCQ-Quiz-App
 
-Created using Django framework where teacher can create quiz and student can give any quiz exam created by teacher which includes login and register page as well 
+Created using Django framework where teacher can create quiz and student can give any quiz exam created by teacher which includes login and register page as well. 
 
 # Download
 
