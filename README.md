@@ -7,20 +7,28 @@ Created using Django framework where teacher can create quiz and student can giv
 1. Clone this repository
 
 ```html
-https://github.com/DipeshDhandha07/Onlinequizapp.git
+https://github.com/DipeshDhandha07/MCQ-Quiz-App.git
 ```
 2. Django installation
 
 ```html
 pip install django
 ```
-3. Run
+3. Create virtual environment
 
+Windows
 ```html
-py -m venv env
+py -m venv env 
+```
+Linux/MacOS
+```html
+python -m venv env 
 ```
 
-copy MCQ-Quiz-APP and paste to env folder
+4. Copy MCQ-Quiz-APP folder and paste to env folder
+
+5. Run
+
 ```html
 env\Scripts\activate.bat
 ```
